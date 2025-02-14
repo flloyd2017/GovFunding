@@ -18,7 +18,7 @@ sheet = client.open_by_key(SHEET_ID).sheet1
 st.set_page_config(layout="wide")
 
 # Display banner image at the top
-st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFundingData/Screenshot 2025-02-14 at 14.50.25.png", use_column_width=True)
+st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_column_width=True)
 
 USPop = 334.9
 
