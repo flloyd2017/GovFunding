@@ -11,8 +11,10 @@ from google.oauth2.service_account import Credentials
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 # Load credentials from Streamlit secrets
-creds_dict = st.secrets["google_sheets"]
-creds = Credentials.from_service_account_info(json.loads(creds_dict))
+
+creds = Credentials.from_service_account_info(st.secrets["google_sheets"])
+client = gspread.authorize(creds)
+
 
 client = gspread.authorize(creds)
 
