@@ -171,7 +171,7 @@ if st.button("Submit Selection"):
     if email_exists(email):
         st.warning("🚨 Entry for that email has already been submitted.")
     else:
-    if not name or not email:
+        if not name or not email:
         st.error("Name and Email are required to submit your selection.")
     elif not selected_agencies:
         st.error("Please select at least one program to fund.")
