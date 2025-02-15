@@ -149,6 +149,14 @@ selected_total = sum(selected_agencies.values())
 selected_cost_per_person = round(selected_total / USPop, 2)
 
 # Save data to Google Sheets
+def email_exists(email):
+    try:
+        emails = sheet.col_values(2)  # Assuming email is in the second column
+        return email in emails
+    except Exception as e:
+        st.error(f"Failed to check email: {e}")
+        return False
+
 def save_data(name, email, selected_agencies):
     selected_agency_list = ", ".join(selected_agencies.keys())
     new_entry = [name, email, selected_agency_list, selected_total, selected_cost_per_person]
@@ -160,13 +168,16 @@ def save_data(name, email, selected_agencies):
         st.error(f"Failed to save data: {e}")
 
 if st.button("Submit Selection"):
+    if email_exists(email):
+        st.warning("🚨 Entry for that email has already been submitted.")
+    else:
     if not name or not email:
         st.error("Name and Email are required to submit your selection.")
     elif not selected_agencies:
         st.error("Please select at least one program to fund.")
-    else:
         save_data(name, email, selected_agencies)
-        
+
+
 # Sankey Diagram
 if selected_agencies:
     st.markdown("<h1 style='text-align: center;'>🔥 <strong>TOTAL SELECTED PROGRAM COST PER CITIZEN</strong> 🔥</h1>", unsafe_allow_html=True)
