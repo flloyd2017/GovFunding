@@ -8,7 +8,8 @@ import json
 from google.oauth2.service_account import Credentials
 
 # Google Sheets API setup
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+
 
 st.write(st.secrets["google_sheets"])
 
@@ -17,7 +18,7 @@ try:
 
     # Authenticate the service account
     creds_dict = dict(st.secrets["google_sheets"])
-    creds = Credentials.from_service_account_info(creds_dict)
+    creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
     client = gspread.authorize(creds)
 
     # Debug if client is working
