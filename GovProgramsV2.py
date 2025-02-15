@@ -10,9 +10,6 @@ from google.oauth2.service_account import Credentials
 # Google Sheets API setup
 scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
-
-st.write(st.secrets["google_sheets"])
-
 try:
     st.write("🔄 Attempting to authenticate with Google Sheets...")
 
