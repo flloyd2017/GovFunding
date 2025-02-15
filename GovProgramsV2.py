@@ -29,7 +29,10 @@ except Exception as e:
     st.error(f"🚨 Failed to connect: {e}")
 
 # Set wide page layout
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
+
+# Set wide page layout
+st.set_page_config(page_title="US Government Agency Costs", layout="wide")
 
 # Display banner image at the top
 #st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_column_width=True)
