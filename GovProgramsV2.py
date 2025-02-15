@@ -14,17 +14,14 @@ from google.oauth2.service_account import Credentials
 st.set_page_config(page_title="US Government Agency Costs", layout="wide")
 
 # Display banner image at the top
-#st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_container_width=True)
-#st.image("banner", use_column_width=True)
-st.image("https://github.com/flloyd2017/GovFunding/blob/main/banner.png", use_column_width=True)
-
+st.image("https://raw.githubusercontent.com/flloyd2017/GovFunding/main/banner.png", use_column_width=True)
 
 
 # Google Sheets API setup
 scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
 try:
-    st.write("🔄 Attempting to authenticate with Google Sheets...")
+    #st.write("🔄 Attempting to authenticate with Google Sheets...")
 
     # Authenticate the service account
     creds_dict = dict(st.secrets["google_sheets"])
@@ -32,13 +29,13 @@ try:
     client = gspread.authorize(creds)
 
     # Debug if client is working
-    st.success("✅ Successfully authenticated with Google Sheets API.")
+    #st.success("✅ Successfully authenticated with Google Sheets API.")
 
     # Test opening the sheet
     SHEET_ID = "15NR5PCoUTNVjTueWwwIhB4EwyCqj3BOJKj9f2FhkeGA"  # Ensure this is the correct ID
     sheet = client.open_by_key(SHEET_ID).sheet1
 
-    st.success("✅ Successfully connected to the Google Sheet.")
+    #st.success("✅ Successfully connected to the Google Sheet.")
 
 except Exception as e:
     st.error(f"🚨 Google Sheets connection failed: {e}")
