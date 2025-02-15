@@ -33,26 +33,6 @@ try:
 except Exception as e:
     st.error(f"🚨 Google Sheets connection failed: {e}")
 
-'''
-# Load credentials correctly
-creds_dict = st.secrets["google_sheets"]
-creds = Credentials.from_service_account_info(dict(creds_dict))
-
-# Authenticate and connect to Google Sheets
-client = gspread.authorize(creds)
-
-
-# Open your Google Sheet
-SHEET_ID = "15NR5PCoUTNVjTueWwwIhB4EwyCqj3BOJKj9f2FhkeGA"  # Replace with your actual Google Sheet ID
-sheet = client.open_by_key(SHEET_ID).sheet1
-
-#try:
-#    sheet = client.open_by_key(SHEET_ID).sheet1
-#    st.success("✅ Successfully connected to Google Sheets!")
-#except Exception as e:
-#    st.error(f"🚨 Failed to connect: {e}")
-
-'''
 
 # Set wide page layout
 st.set_page_config(layout="wide")
