@@ -16,6 +16,8 @@ st.set_page_config(page_title="US Government Agency Costs", layout="wide")
 # Display banner image at the top
 #st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_container_width=True)
 #st.image("banner", use_column_width=True)
+st.image("https://github.com/flloyd2017/GovFunding/blob/main/banner.png", use_column_width=True)
+
 
 
 # Google Sheets API setup
