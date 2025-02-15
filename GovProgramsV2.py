@@ -14,7 +14,7 @@ from google.oauth2.service_account import Credentials
 st.set_page_config(page_title="US Government Agency Costs", layout="wide")
 
 # Display banner image at the top
-st.image("https://raw.githubusercontent.com/flloyd2017/GovFunding/main/banner.png", use_column_width=True)
+st.image("https://raw.githubusercontent.com/flloyd2017/GovFunding/main/banner.png", use_container_width=True)
 
 
 # Google Sheets API setup
