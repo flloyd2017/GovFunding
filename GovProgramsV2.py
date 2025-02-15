@@ -7,6 +7,15 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 from google.oauth2.service_account import Credentials
 
+# Set wide page layout
+#st.set_page_config(layout="wide")
+
+# Set wide page layout
+st.set_page_config(page_title="US Government Agency Costs", layout="wide")
+
+# Display banner image at the top
+#st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_column_width=True)
+
 # Google Sheets API setup
 scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
@@ -30,15 +39,6 @@ try:
 except Exception as e:
     st.error(f"🚨 Google Sheets connection failed: {e}")
 
-
-# Set wide page layout
-st.set_page_config(layout="wide")
-
-# Set wide page layout
-#st.set_page_config(page_title="US Government Agency Costs", layout="wide")
-
-# Display banner image at the top
-#st.image("/Users/forresthansen/Desktop/GitHubProjects/GovFunding/Screenshot 2025-02-14 at 14.50.25.png", use_column_width=True)
 
 USPop = 334.9
 
