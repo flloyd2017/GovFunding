@@ -10,6 +10,9 @@ from google.oauth2.service_account import Credentials
 # Google Sheets API setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
+st.write(st.secrets["google_sheets"])
+
+
 # Load credentials correctly
 creds_dict = st.secrets["google_sheets"]
 creds = Credentials.from_service_account_info(dict(creds_dict))
