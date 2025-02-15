@@ -166,8 +166,7 @@ if st.button("Submit Selection"):
         st.error("Please select at least one program to fund.")
     else:
         save_data(name, email, selected_agencies)
-        save_data(name, email, selected_agencies)
-
+        
 # Sankey Diagram
 if selected_agencies:
     st.markdown("<h1 style='text-align: center;'>🔥 <strong>TOTAL SELECTED PROGRAM COST PER CITIZEN</strong> 🔥</h1>", unsafe_allow_html=True)
