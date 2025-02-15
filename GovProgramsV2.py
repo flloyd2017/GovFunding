@@ -12,7 +12,27 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 
 st.write(st.secrets["google_sheets"])
 
+try:
+    st.write("🔄 Attempting to authenticate with Google Sheets...")
 
+    # Authenticate the service account
+    creds_dict = dict(st.secrets["google_sheets"])
+    creds = Credentials.from_service_account_info(creds_dict)
+    client = gspread.authorize(creds)
+
+    # Debug if client is working
+    st.success("✅ Successfully authenticated with Google Sheets API.")
+
+    # Test opening the sheet
+    SHEET_ID = "15NR5PCoUTNVjTueWwwIhB4EwyCqj3BOJKj9f2FhkeGA"  # Ensure this is the correct ID
+    sheet = client.open_by_key(SHEET_ID).sheet1
+
+    st.success("✅ Successfully connected to the Google Sheet.")
+
+except Exception as e:
+    st.error(f"🚨 Google Sheets connection failed: {e}")
+
+'''
 # Load credentials correctly
 creds_dict = st.secrets["google_sheets"]
 creds = Credentials.from_service_account_info(dict(creds_dict))
@@ -30,6 +50,8 @@ sheet = client.open_by_key(SHEET_ID).sheet1
 #    st.success("✅ Successfully connected to Google Sheets!")
 #except Exception as e:
 #    st.error(f"🚨 Failed to connect: {e}")
+
+'''
 
 # Set wide page layout
 st.set_page_config(layout="wide")
