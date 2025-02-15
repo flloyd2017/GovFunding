@@ -95,7 +95,7 @@ agencies = {
 def cost_per_citizen(cost):
     return round(cost / USPop, 2)
 
-st.title("US Government Agency Costs Per Citizen")
+st.title("US Government Agency Costs Per Citizen V1")
 
 st.markdown(
     """
